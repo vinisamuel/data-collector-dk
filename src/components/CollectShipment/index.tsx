@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Button, Snackbar } from '@material-ui/core';
-import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
+import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   KeyboardDatePicker,
