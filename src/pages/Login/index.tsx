@@ -18,10 +18,13 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event: React.SyntheticEvent) => {
-    if (username !== 'admin' || password !== 'admin') {
+    if (
+      username.toUpperCase() !== 'ADMIN' ||
+      password.toUpperCase() !== 'ADMIN'
+    ) {
       setOpenError(true);
     } else {
-      history.push('collect-shipment');
+      history.push('collect-carrier');
     }
   };
 
@@ -43,7 +46,7 @@ const Login: React.FC = () => {
 
   return (
     <div className={classes.container}>
-      <h1 className={classes.title}>Faça seu login!</h1>
+      <h1 className={classes.title}>Faça seu login</h1>
 
       <div className={classes.formContainer}>
         <form className={classes.root} autoComplete='off'>
@@ -52,7 +55,6 @@ const Login: React.FC = () => {
               id='username'
               label='Usuário'
               variant='outlined'
-              size='small'
               required
               onChange={handleChange}
             />
@@ -62,7 +64,6 @@ const Login: React.FC = () => {
               label='Senha'
               type='password'
               variant='outlined'
-              size='small'
               required
               onChange={handleChange}
             />
