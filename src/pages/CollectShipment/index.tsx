@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { Button, Snackbar } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
-import { makeStyles } from '@material-ui/core/styles';
 import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider,
@@ -10,16 +9,7 @@ import {
 import TextField from '@material-ui/core/TextField';
 import DateFnsUtils from '@date-io/date-fns';
 import { Link } from 'react-router-dom';
-import { Container, Content, FormContainer, Title } from './styles';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  },
-}));
+import { useStyles } from './styles';
 
 const CollectShipment: React.FC = () => {
   const classes = useStyles();
@@ -44,17 +34,17 @@ const CollectShipment: React.FC = () => {
   };
 
   return (
-    <Container>
-      <Title>Coleta do Embarque</Title>
+    <div className={classes.container}>
+      <h1 className={classes.title}>Coleta do Embarque</h1>
 
-      <FormContainer>
+      <div className={classes.formContainer}>
         <form
           className={classes.root}
           noValidate
           autoComplete='off'
           title='COLETA DO EMBARQUE'
         >
-          <Content>
+          <div className={classes.content}>
             <TextField
               id='outlined-error-helper-text'
               label='Número do Embarque'
@@ -77,9 +67,9 @@ const CollectShipment: React.FC = () => {
                 }}
               />
             </MuiPickersUtilsProvider>
-          </Content>
+          </div>
         </form>
-      </FormContainer>
+      </div>
 
       <Button variant='contained' color='primary'>
         <Link to='/collect-warehouse'>Confirmar</Link>
@@ -103,7 +93,7 @@ const CollectShipment: React.FC = () => {
           Embarque inválido!
         </MuiAlert>
       </Snackbar>
-    </Container>
+    </div>
   );
 };
 

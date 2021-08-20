@@ -1,40 +1,43 @@
-import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core/styles';
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  padding: 16px;
+export const useStyles = makeStyles(theme => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '300px',
+    padding: '16px',
+    background: '#f4f4f8',
 
-  background: #f4f4f8;
-
-  a {
-    color: #f4f4f8;
-    text-decoration: none;
-  }
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const FormContainer = styled.div`
-  display: flex;
-  padding: 16px;
-  margin-bottom: 16px;
-`;
-
-export const Title = styled.h1`
-  font-size: 24px;
-`;
-
-export const GroupButton = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-`;
+    '& a': {
+      color: '#f4f4f8',
+      textDecoration: 'none',
+    },
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  formContainer: {
+    display: 'flex',
+    padding: '16px',
+    marginBottom: '16px',
+  },
+  title: {
+    fontSize: '24px',
+  },
+  groupButton: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    width: '100%',
+  },
+}));

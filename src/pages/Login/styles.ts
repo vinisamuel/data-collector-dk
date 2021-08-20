@@ -27,12 +27,12 @@ export const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    fontSize: '24px',
+  },
   formContainer: {
     display: 'flex',
     padding: '16px',
     marginBottom: '16px',
-  },
-  title: {
-    fontSize: '24px',
   },
 }));
